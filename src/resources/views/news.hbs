@@ -1,13 +1,14 @@
 {{!-- badges  --}}
 <div class="mt-4">
-    <span class="badge badge-primary">Primary</span>
-    <span class="badge badge-secondary">Secondary</span>
-    <span class="badge badge-success">Success</span>
-    <span class="badge badge-danger">Danger</span>
-    <span class="badge badge-warning">Warning</span>
-    <span class="badge badge-info">Info</span>
-    <span class="badge badge-light">Light</span>
-    <span class="badge badge-dark">Dark</span>
+    {{#each block}}
+      <a href="/show/{{this.slug}}">
+        <span class="badge badge-primary">{{this._id}}</span>
+      </a>
+      <span class="badge badge-secondary">{{this.nonce}}</span>
+      <span class="badge badge-success">{{this.data}}</span>
+      <span class="badge badge-danger">{{this.preId}}</span>
+      <hr>
+    {{/each}}
 </div>
 {{!-- collapse  --}}
 <div id="accordion" class="mt-4">
