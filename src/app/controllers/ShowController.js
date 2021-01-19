@@ -19,4 +19,4 @@ class NewController{
         .catch(next)
     }
 }
-module.exports = new NewController
+module.exports = new NewController()

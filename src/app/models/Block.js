@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
 const Schema = mongoose.Schema;
 
 const Blocks = new Schema({
-    nonce: { type: Number, min: 18, index: true },
-    data: { type: String,maxlength: 255, default: 'hahaha'},
-    preid: { type: String, maxlength: 26 },
-    date: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now }
+    nonce: { type: Number, index: true },
+    data: { type: String},
+    preid: { type: String },
+    slug: { type: String, slug: 'data', unique : true }
 });
 
 module.exports = mongoose.model('Block', Blocks)

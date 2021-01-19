@@ -20,4 +20,4 @@ class NewController{
         .catch(res.send('E'))
     }
 }
-module.exports = new NewController
+module.exports = new NewController()
